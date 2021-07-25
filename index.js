@@ -51,7 +51,7 @@ app
       console.log(
         chalk.gray("Committing files to GitHub at: " + chalk.yellow(currentURL))
       );
-      const commit = await repo.initialCommit(currentURL, repoName);
+      const commit = await repo.initialCommit(repoName);
       if (commit) {
         console.log(
           chalk.green("Your project has been successfully committed to Github!")
@@ -145,12 +145,6 @@ app
     }
   });
 
-app.parse(process.argv);
-
-if (!app.args.length) {
-  app.help();
-}
-
 function cloneRepository(url, repoName) {
   const path = process.cwd;
   shell.cd(path);
@@ -200,4 +194,10 @@ async function promptRepositoryData() {
   }
 
   return { url, repoName: name === undefined ? "" : name };
+}
+
+app.parse(process.argv);
+
+if (!app.args.length) {
+  app.help();
 }
