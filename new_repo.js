@@ -2,7 +2,7 @@ const path = require("path");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const glob = require("glob");
-const git = require("simple-git")();
+const shell = require("shelljs");
 
 const repoName = {
   name: "name",
@@ -95,14 +95,16 @@ async function ignoreFiles() {
   }
 }
 
-async function initialCommit(url, dir) {
+async function initialCommit(dir) {
   try {
-    await git.add("edgar").commit("Initial commit");
-    await git.push(url, "main");
+    shell.cd(`./${dir}`);
+    shell.exec("git add .");
+    shell.exec(`git commit --m "Updating ${dir} after beeing created"`);
+    shell.exec("git push");
 
     return true;
   } catch (error) {
-    console.log("Something is wrong at initialCommit", error);
+    console.log("Something happend during the update", error);
   }
 }
 
