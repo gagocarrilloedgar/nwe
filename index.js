@@ -1,72 +1,170 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
-
-import { greenBright, red, green } from 'chalk';
-import clear from 'clear';
-import { textSync } from 'figlet';
-
-import { directoryExists } from './lib/files';
-import { getStoredGithubToken, getPersonalAccesToken, githubAuth } from './lib/github';
-import { createRemoteRepo, createGitignore, setupRepo } from './lib/repo';
+const app = require("commander");
+const chalk = require("chalk");
+const clear = require("clear");
+const figlet = require("figlet");
+const inquirer = require("inquirer");
+const repo = require("./new_repo");
+const auth = require("./creds");
+const shell = require("shelljs");
 
 clear();
 
-console.log(
-    greenBright(
-        textSync('Nuwe CLI', { horizontalLayout: 'full' })
-    )
-);
+app
+  .command("clone")
+  .description("Clone github project")
+  .action(async () => {
+    nuewInit();
+    promptRepositoryData().then(({ url, repoName }) =>
+      cloneRepository(url, repoName)
+    );
+  });
 
-if (directoryExists('.git')) {
-    console.log(red('Already a Git repository!'));
-    process.exit();
+app
+  .command("create")
+  .description("Clone and create a new Github project from another one")
+  .action(async () => {
+    nuewInit();
+
+    nuewInit();
+    promptRepositoryData().then(({ url, repoName }) =>
+      cloneRepository(url, repoName)
+    );
+	
+  });
+
+app
+  .command("init")
+  .description("Run CLI tool")
+  .action(async () => {
+    clear();
+    console.log(
+      chalk.magentaBright(
+        figlet.textSync("NUWE CLI", { horizontalLayout: "full" })
+      )
+    );
+    const question = [
+      {
+        name: "proceed",
+        type: "input",
+        message: "Proceed to push this project to a Github remote repo?",
+        choices: ["Yes", "No"],
+        default: "Yes",
+      },
+    ];
+    const answer = await inquirer.prompt(question);
+
+    if (answer.proceed == "Yes") {
+      console.log(chalk.gray("Authenticating..."));
+      const octokit = await auth.authenticate();
+      console.log(chalk.gray("Initializing new remote repo..."));
+      const url = await repo.newRepo(octokit);
+
+      console.log(chalk.gray("Remote repo created. Choose files to ignore."));
+      await repo.ignoreFiles();
+
+      console.log(
+        chalk.gray("Committing files to GitHub at: " + chalk.yellow(url))
+      );
+      const commit = await repo.initialCommit(url);
+      if (commit) {
+        console.log(
+          chalk.green("Your project has been successfully committed to Github!")
+        );
+      }
+    } else {
+      console.log(chalk.gray("Okay, bye."));
+    }
+  });
+
+app
+  .command("token")
+  .description("Delete github token")
+  .action(async () => {
+    clear();
+    console.log(
+      chalk.magentaBright(
+        figlet.textSync("Repo Create", { horizontalLayout: "full" })
+      )
+    );
+
+    console.log(chalk.gray("Checking for stored token..."));
+    let token = auth.config.get("github_token");
+    if (token) {
+      console.log("A token is stored in configstore.");
+      const question = [
+        {
+          name: "proceed",
+          type: "input",
+          message: "Proceed to delete stored token?",
+          choices: ["Yes", "No"],
+          default: "Yes",
+        },
+      ];
+      const answer = await inquirer.prompt(question);
+      if (answer.proceed == "Yes") {
+        auth.config.delete("github_token");
+        console.log(chalk.gray("Token is deleted."));
+      } else {
+        console.log(chalk.gray("Okay, bye."));
+      }
+    } else {
+      console.log(chalk.gray("No token is found."));
+    }
+  });
+
+app.parse(process.argv);
+
+if (!app.args.length) {
+  app.help();
 }
 
-const getGithubToken = async () => {
-    // Fetch token from config store
-    let token = getStoredGithubToken();
-    if (token) {
-        return token;
-    }
+function cloneRepository(url, repoName) {
+  const path = process.cwd;
+  shell.cd(path);
+  shell.exec(`git clone ${url} ${repoName}`);
+}
 
-    // No token found, use credentials to access GitHub account
-    token = await getPersonalAccesToken();
+function nuewInit() {
+  console.log(
+    chalk.greenBright(
+      figlet.textSync("NUWE CLI ", { horizontalLayout: "full" })
+    )
+  );
+}
 
-    return token;
-};
+async function promptRepositoryData() {
+  var questions = {
+    setUp: [
+      {
+        name: "url",
+        type: "input",
+        message: `What's the name of the repo you'd like to clone?`,
+      },
+      {
+        name: "changeName",
+        type: "input",
+        message: `Would you like to change the repository name?`,
+        choices: ["Yes", "No"],
+        default: "Yes",
+      },
+    ],
+    repoName: [
+      {
+        name: "repoName",
+        type: "input",
+        message: `What is the new name?`,
+      },
+    ],
+  };
 
-const run = async () => {
-    try {
-        // Retrieve & Set Authentication Token
-        let token = new Promise(getGithubToken());
-        await token;
+  const { url, changeName } = await inquirer.prompt(questions.setUp);
 
-        githubAuth(token);
+  if (changeName.toLowerCase() === "yes" || changeName.toLowerCase() === "y") {
+    var { name } = await inquirer.prompt(questions.repoName);
+  }
 
-        // Create remote repository
-        const url = await createRemoteRepo();
-
-        // Create .gitignore file
-        await createGitignore();
-
-        // Set up local repository and push to remote
-        await setupRepo(url);
-
-        console.log(green('Todo ready!'));
-    } catch (err) {
-        if (err) {
-            switch (err.status) {
-                case 401:
-                    console.log(red('No nos hemos podido conectar, por favor conecta con tu TOKEN de github'));
-                    break;
-                case 422:
-                    console.log(red('Ya existe un repositorio remoto o existe un nombre con el mismo TOKEN'));
-                    break;
-                default:
-                    console.log(red(err));
-            }
-        }
-    }
-};
-
-run();
+  var repoName = name === undefined ? "" : name;
+  return { url, repoName };
+}

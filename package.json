@@ -1,32 +1,33 @@
 {
   "name": "nuwe_cli",
-  "version": "1.0.0",
-  "description": "nuwe CLI",
+  "version": "1.0.7",
+  "description": "Simple CLI app to automate GitHub repo initialization",
   "main": "index.js",
+  "keywords": [
+    "node",
+    "github",
+    "cli"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Git",
-    "CLI"
-  ],
-  "bin": {
-    "nuwe": "./index.js"
+  "author": "Edgar Gago",
+  "repository": {
+    "type": "git"
   },
-  "author": "<YOUR NAME>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/auth-basic": "^1.4.8",
-    "@octokit/rest": "^18.7.1",
-    "chalk": "^4.1.1",
+    "-": "^0.0.1",
+    "@octokit/rest": "^18.3.5",
+    "chalk": "^4.1.0",
     "clear": "^0.1.0",
-    "clui": "^0.3.6",
-    "configstore": "^6.0.0",
+    "commander": "^7.2.0",
+    "configstore": "^5.0.1",
     "figlet": "^1.5.0",
-    "inquirer": "^8.1.2",
-    "lodash": "^4.17.21",
-    "minimst": "*",
-    "simple-git": "^2.41.1",
-    "touch": "^3.1.0"
-  }
+    "glob": "^7.1.6",
+    "inquirer": "^8.0.0",
+    "shelljs": "^0.8.4",
+    "simple-git": "^2.37.0"
+  },
+  "bin": "index.js"
 }

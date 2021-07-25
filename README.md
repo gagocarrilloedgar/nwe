@@ -1,2 +1,1 @@
-# custom_cli
-CLI to clone projects from github
+## Remote Github Repository Creator CLI
