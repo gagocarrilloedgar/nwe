@@ -31,7 +31,6 @@ app
     promptRepositoryData().then(({ url, repoName }) =>
       cloneRepository(url, repoName)
     );
-	
   });
 
 app
@@ -53,6 +52,7 @@ app
         default: "Yes",
       },
     ];
+
     const answer = await inquirer.prompt(question);
 
     if (answer.proceed == "Yes") {
