@@ -11,6 +11,16 @@ const shell = require("shelljs");
 
 clear();
 
+app.command("test").action(async () => {
+  const currentURL = "https://github.com/gagocarrilloedgar/edgar";
+  const commit = await repo.initialCommit(currentURL, "edgar");
+  if (commit) {
+    console.log(
+      chalk.green("Your project has been successfully committed to Github!")
+    );
+  }
+});
+
 app
   .command("clone")
   .description("Clone github project")
@@ -27,10 +37,27 @@ app
   .action(async () => {
     nuewInit();
 
-    nuewInit();
-    promptRepositoryData().then(({ url, repoName }) =>
-      cloneRepository(url, repoName)
-    );
+    promptRepositoryData().then(async ({ url, repoName }) => {
+      cloneRepository(url, repoName);
+
+      console.log(chalk.gray("Authenticating..."));
+
+      const octokit = await auth.authenticate();
+
+      console.log(chalk.gray("Initializing new remote repo..."));
+
+      const currentURL = await repo.newRepo(octokit, repoName);
+
+      console.log(
+        chalk.gray("Committing files to GitHub at: " + chalk.yellow(currentURL))
+      );
+      const commit = await repo.initialCommit(currentURL, repoName);
+      if (commit) {
+        console.log(
+          chalk.green("Your project has been successfully committed to Github!")
+        );
+      }
+    });
   });
 
 app
@@ -58,7 +85,9 @@ app
     if (answer.proceed == "Yes") {
       console.log(chalk.gray("Authenticating..."));
       const octokit = await auth.authenticate();
+
       console.log(chalk.gray("Initializing new remote repo..."));
+
       const url = await repo.newRepo(octokit);
 
       console.log(chalk.gray("Remote repo created. Choose files to ignore."));
@@ -83,14 +112,16 @@ app
   .description("Delete github token")
   .action(async () => {
     clear();
+
     console.log(
-      chalk.magentaBright(
-        figlet.textSync("Repo Create", { horizontalLayout: "full" })
+      chalk.greenBright(
+        figlet.textSync("NUWE TOKENS", { horizontalLayout: "full" })
       )
     );
 
     console.log(chalk.gray("Checking for stored token..."));
     let token = auth.config.get("github_token");
+
     if (token) {
       console.log("A token is stored in configstore.");
       const question = [
@@ -123,7 +154,10 @@ if (!app.args.length) {
 function cloneRepository(url, repoName) {
   const path = process.cwd;
   shell.cd(path);
-  shell.exec(`git clone ${url} ${repoName}`);
+  if (shell.exec(`git clone ${url} ${repoName}`).code !== 0) {
+    shell.echo("Error: Git commit failed");
+    shell.exit(1);
+  }
 }
 
 function nuewInit() {
@@ -140,7 +174,7 @@ async function promptRepositoryData() {
       {
         name: "url",
         type: "input",
-        message: `What's the name of the repo you'd like to clone?`,
+        message: `What's the URL of the repo you'd like to clone?`,
       },
       {
         name: "changeName",
@@ -152,7 +186,7 @@ async function promptRepositoryData() {
     ],
     repoName: [
       {
-        name: "repoName",
+        name: "name",
         type: "input",
         message: `What is the new name?`,
       },
@@ -165,6 +199,5 @@ async function promptRepositoryData() {
     var { name } = await inquirer.prompt(questions.repoName);
   }
 
-  var repoName = name === undefined ? "" : name;
-  return { url, repoName };
+  return { url, repoName: name === undefined ? "" : name };
 }
