@@ -5,7 +5,6 @@ const { logError } = require("./logger");
 
 async function pushFolderToRepo(dir) {
   try {
-    console.log(dir);
     shell.cd(`${process.cwd()}/${dir}`);
     shell.exec("git add .");
     shell.exec("git remote -v");
