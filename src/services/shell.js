@@ -1,15 +1,13 @@
 // Functions related to actions made by the console
 const shell = require("shelljs");
 
-const { logError } = require("./logger");
+const { logError, logSuccess } = require("./logger");
 
-async function pushFolderToRepo(dir) {
+async function pushFolderToRepo(url, dir) {
+  const path = process.cwd() + "/" + dir;
   try {
-    shell.cd(`${process.cwd()}/${dir}`);
-    shell.exec("git add .");
-    shell.exec("git remote -v");
-    shell.exec(`git commit --m "Updating ${dir} after beeing created"`);
-    shell.exec("git push origin main");
+    shell.cd(path);
+    shell.exec(`git push --mirror ${url}`);
 
     return true;
   } catch (error) {
@@ -21,7 +19,18 @@ async function pushFolderToRepo(dir) {
 function cloneRepo(url, repoName) {
   const path = process.cwd();
   shell.cd(path);
-  shell.exec(`git clone ${url} ${repoName}`);
+  shell.exec(`git --bare clone ${url} ${repoName}`);
 }
 
-module.exports = { pushFolderToRepo, cloneRepo };
+function testRunner(dirName) {
+  // install the packages
+  const path = process.cwd() + "/" + dirName;
+  shell.cd(path);
+  shell.exec("npm i");
+
+  // run the tests
+  shell.exec("npm run test");
+  logSuccess("Your test report is ready");
+}
+
+module.exports = { pushFolderToRepo, cloneRepo, testRunner };

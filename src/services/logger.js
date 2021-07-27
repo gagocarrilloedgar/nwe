@@ -16,4 +16,4 @@ const logError = (errorMessage) => console.error(errorMessage);
 
 const logger = (action) => console.log(action);
 
-module.exports = { nuweInit, logInfo, logAlert, logSuccess, logError };
+module.exports = { logger, nuweInit, logInfo, logAlert, logSuccess, logError };

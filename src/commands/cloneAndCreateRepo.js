@@ -1,8 +1,13 @@
-const { authenticate, newGithubRepo } = require("../services/github");
-const { logInfo, nuweInit, logAlert, logSuccess } = require("../services/logger");
+const {
+  logInfo,
+  nuweInit,
+  logAlert,
+  logSuccess,
+} = require("../services/logger");
 const { cloneRepo, pushFolderToRepo } = require("../services/shell");
 const app = require("commander");
 const { inquireRepositoryData } = require("../services/inquirer");
+const { authenticate, newGithubRepo } = require("../services/github");
 
 const cloneAndCreateRepo = () =>
   app
@@ -25,7 +30,7 @@ const cloneAndCreateRepo = () =>
 
         logAlert(currentURL);
 
-        const commit = await pushFolderToRepo(repoName);
+        const commit = await pushFolderToRepo(currentURL, repoName);
 
         if (commit)
           logSuccess("Your project has been successfully committed to Github!");
