@@ -12,7 +12,8 @@ const cloneWithInquire = () =>
       nuweInit("nuwe cli");
       inquireRepositoryData().then(({ url, repoName }) => {
         cloneRepo(url, repoName);
-        testRunner(repoName);
+        const dirName = repoName || url.split("/").pop();
+        testRunner(dirName);
       });
     });
 
