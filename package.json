@@ -1,19 +1,23 @@
 {
-  "name": "nuwe",
+  "name": "gitx",
   "version": "1.0.0",
-  "description": "Simple CLI app to automate GitHub repo initialization",
+  "description": "Superchargex git commands",
   "main": "index.js",
   "keywords": [
     "node",
     "github",
-    "cli"
+    "cli",
+    "js",
+    "git"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "dev": "nodemon index.js"
   },
-  "author": "Edgar Gago",
+  "author": "Edgar Gago Carrillo",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/gagocarrilloedgar/custom_cli"
   },
   "license": "ISC",
   "dependencies": {
@@ -29,7 +33,7 @@
     "shelljs": "^0.8.4"
   },
   "bin": {
-    "nuwe": "./index.js"
+    "gitx": "./index.js"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
