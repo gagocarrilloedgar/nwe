@@ -8,7 +8,7 @@ const poweredGitPush = () =>
     .option('-o, --origin', 'Push to the current branch')
     .arguments('<description>', 'Description of the commit')
     .description('Combined git add . | git commit -m "Description" | git push')
-    .action(async (option, description) => {
+    .action((option, description) => {
       if (option.origin) {
         pushOrigin()
       } else {
