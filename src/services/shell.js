@@ -26,7 +26,7 @@ const push = () => shell.exec('git push')
 
 const pushOrigin = async () => {
   const branch = await shell.exec('git symbolic-ref --short HEAD')
-  shell.exec(`push origin ${branch}`)
+  shell.exec(`git push origin ${branch}`)
 }
 
 function addCommit(description) {
