@@ -22,5 +22,15 @@ function cloneRepo(url, repoName) {
   shell.exec(`git --bare clone ${url} ${repoName}`)
 }
 
+function addCommitPush(description) {
+  // we make sure we are in the root folder
+  const path = process.cwd()
+  shell.cd(path)
+
+  shell.exec('git add .')
+  shell.exec(`git commit --m "${description}"`)
+  shell.exec('git push')
+}
+
 // https://github.com/gagocarrilloedgar/keplerJs
-module.exports = { pushFolderToRepo, cloneRepo }
+module.exports = { pushFolderToRepo, cloneRepo, addCommitPush }

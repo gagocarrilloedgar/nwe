@@ -2,14 +2,8 @@
 
 const clear = require('clear')
 
-const {
-  checkArgumentsForHelp,
-  parseArguments,
-  cloneAndCreateRepo,
-  cloneWithInquire,
-  poweredGitPush
-} = require('./src/commands')
-const { testing } = require('./src/commands/baseCommands')
+const { checkArgumentsForHelp, parseArguments, cloneAndCreateRepo, cloneWithInquire, poweredGitPush } = require('./commands')
+const { testing } = require('./commands/baseCommands')
 
 clear()
 
@@ -23,7 +17,6 @@ cloneWithInquire()
 cloneAndCreateRepo()
 
 // Powered git add . git commit --m "fdsf" git push
-
 poweredGitPush()
 
 // Parse the arguments and create the help command
