@@ -16,9 +16,6 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
       - Backend
       - Frontend
       - Mobile
-- Git add, commit y push en un único comando 
-- Git branch & checkout en un único comando
-- Git add, commit y push origin en un único comando
 
 
 ## Badges 
