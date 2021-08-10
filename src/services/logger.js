@@ -1,19 +1,18 @@
-const chalk = require("chalk");
-const figlet = require("figlet");
+const chalk = require('chalk')
+const figlet = require('figlet')
 
-const logTitle = (message) =>
-  chalk.greenBright(figlet.textSync(message, { horizontalLayout: "full" }));
+const logTitle = (message) => chalk.greenBright(figlet.textSync(message, { horizontalLayout: 'full' }))
 
-const nuweInit = (message) => logger(logTitle(message));
+const gitxInit = (message) => logger(logTitle(message))
 
-const logInfo = (message) => logger(chalk.gray(message));
+const logInfo = (message) => logger(chalk.gray(message))
 
-const logAlert = (message) => logger(chalk.yellow(message));
+const logAlert = (message) => logger(chalk.yellow(message))
 
-const logSuccess = (message) => logger(chalk.green(message));
+const logSuccess = (message) => logger(chalk.green(message))
 
-const logError = (errorMessage) => console.error(errorMessage);
+const logError = (errorMessage) => console.error(errorMessage)
 
-const logger = (action) => console.log(action);
+const logger = (action) => console.log(action)
 
-module.exports = { logger, nuweInit, logInfo, logAlert, logSuccess, logError };
+module.exports = { logger, gitxInit, logInfo, logAlert, logSuccess, logError }

@@ -1,43 +1,26 @@
-const app = require("commander");
+const app = require('commander')
+const { newGithubRepo, authenticate } = require('../services/github')
+const { inquire } = require('../services/inquirer')
+const { logInfo } = require('../services/logger')
+const { questions } = require('../services/questions')
 
 const pushExistingReop = () =>
   app
-    .command("init")
-    .description("Run CLI tool")
+    .command('init')
+    .description('Run CLI tool')
     .action(async () => {
-      clear();
+      const answer = await inquire(questions)
 
-      nuweInit();
+      if (answer.proceed === 'Yes') {
+        logInfo('Authenticating...')
+        const octokit = await authenticate()
 
-      // pushCurrentRepo
+        logInfo('Initializing new remote repo...')
 
-      const answer = await inquirer.prompt(question);
+        const url = await newGithubRepo(octokit)
 
-      if (answer.proceed == "Yes") {
-        console.log(chalk.gray("Authenticating..."));
-        const octokit = await auth.authenticate();
-
-        console.log(chalk.gray("Initializing new remote repo..."));
-
-        const url = await repo.newRepo(octokit);
-
-        console.log(chalk.gray("Remote repo created. Choose files to ignore."));
-        await repo.ignoreFiles();
-
-        console.log(
-          chalk.gray("Committing files to GitHub at: " + chalk.yellow(url))
-        );
-
-        const commit = await repo.initialCommit(url);
-
-        if (commit) {
-          console.log(
-            chalk.green(
-              "Your project has been successfully committed to Github!"
-            )
-          );
-        }
-      } else {
-        console.log(chalk.gray("Okay, bye."));
+        logInfo('Committing files to GitHub at: ' + url)
       }
-    });
+    })
+
+module.exports = { pushExistingReop }
