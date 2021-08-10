@@ -1,7 +1,7 @@
 // Functions related to actions made by the console
 const shell = require('shelljs')
 
-const { logError } = require('./logger')
+const { logError, logInfo } = require('./logger')
 
 async function pushFolderToRepo(url, dir) {
   const path = process.cwd() + '/' + dir
@@ -22,15 +22,20 @@ function cloneRepo(url, repoName) {
   shell.exec(`git --bare clone ${url} ${repoName}`)
 }
 
-function addCommitPush(description) {
+const push = () => shell.exec('git push')
+const pushOrigin = () => {
+  const branch = shell.exec('git symbolic-ref --short HEAD')
+  logInfo(branch)
+}
+
+function addCommit(description) {
   // we make sure we are in the root folder
   const path = process.cwd()
   shell.cd(path)
 
   shell.exec('git add .')
   shell.exec(`git commit --m "${description}"`)
-  shell.exec('git push')
 }
 
 // https://github.com/gagocarrilloedgar/keplerJs
-module.exports = { pushFolderToRepo, cloneRepo, addCommitPush }
+module.exports = { pushFolderToRepo, cloneRepo, push, addCommit, pushOrigin }
