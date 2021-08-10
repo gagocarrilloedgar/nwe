@@ -1,7 +1,7 @@
 // Functions related to actions made by the console
 const shell = require('shelljs')
 
-const { logError, logInfo } = require('./logger')
+const { logError } = require('./logger')
 
 async function pushFolderToRepo(url, dir) {
   const path = process.cwd() + '/' + dir
@@ -23,9 +23,10 @@ function cloneRepo(url, repoName) {
 }
 
 const push = () => shell.exec('git push')
-const pushOrigin = () => {
-  const branch = shell.exec('git symbolic-ref --short HEAD')
-  logInfo(branch)
+
+const pushOrigin = async () => {
+  const branch = await shell.exec('git symbolic-ref --short HEAD')
+  shell.exec(`push origin ${branch}`)
 }
 
 function addCommit(description) {
