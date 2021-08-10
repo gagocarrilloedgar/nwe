@@ -1,6 +1,6 @@
 ## Remote Github Repository Creator CLI
 
-CLI (Command Line Interface) para facilitar la creación e inicio de repositorio tanto en local como en github
+CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git
 ## Descripción detallada 
 
 El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a githubde forma fácil. Algunas funcionalidades actuales son:
