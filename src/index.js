@@ -4,6 +4,7 @@ const clear = require('clear')
 
 const { checkArgumentsForHelp, parseArguments, cloneAndCreateRepo, cloneWithInquire, poweredGitPush } = require('./commands')
 const { testing } = require('./commands/baseCommands')
+const { branchCheckout } = require('./commands/branchCheckout')
 
 clear()
 
@@ -18,6 +19,9 @@ cloneAndCreateRepo()
 
 // Powered git add . git commit --m "fdsf" git push
 poweredGitPush()
+
+// Combined branch and checkout
+branchCheckout()
 
 // Parse the arguments and create the help command
 parseArguments()

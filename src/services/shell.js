@@ -38,5 +38,9 @@ function addCommit(description) {
   shell.exec(`git commit --m "${description}"`)
 }
 
+const branchAndCheck = (name) => {
+  shell.exec(`git branch ${name}`)
+  shell.exec(`git checkout ${name}`)
+}
 // https://github.com/gagocarrilloedgar/keplerJs
-module.exports = { pushFolderToRepo, cloneRepo, push, addCommit, pushOrigin }
+module.exports = { pushFolderToRepo, cloneRepo, push, addCommit, pushOrigin, branchAndCheck }
