@@ -5,11 +5,11 @@ const { addCommit, pushOrigin } = require('../services/shell')
 const poweredGitPush = () =>
   app
     .command('push')
-    .arguments('<description>', 'Description of the commit')
     .option('-o, --origin', 'Push to the current branch')
+    .arguments('<description>', 'Description of the commit')
     .description('Combined git add . | git commit -m "Description" | git push')
-    .action(async (description, options) => {
-      if (options.origin) {
+    .action(async (option, description) => {
+      if (option.origin) {
         pushOrigin()
       } else {
         addCommit(description)
