@@ -1,36 +1,33 @@
-## Remote Github Repository Creator CLI
+## Remote Github Repository Creator CLI | 
 
-CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git
+CLI (Command Line Interface) based on git but with super powers. The goal is to group and simplify commands to make working with git & github easier and faster.
 
 [![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/nwe/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/nwe) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx) ![GitHub followers](https://img.shields.io/github/followers/gagocarrilloedgar?style=social) ![GitHub forks](https://img.shields.io/github/forks/gagocarrilloedgar/gitx?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/gagocarrilloedgar/gitx?style=social)
 
-## Descripción detallada 
-
-El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a github de forma fácil además de simplificar el uso de git y hacer que las teareas de rutina como ahcer commits y add sean mucho más rápidas agrupando comandos. Algunas funcionalidades actuales son:
-
-- Clon de un proyecto y cambio de nombre 
-- Clon del proyecto, cambio de nombre y subir automáticamente a github
-- Git init y subir a github
-- Github token auth
-- branch + checkout combinando
-- add . commit --m "DECRIPTION" push combiando
-- add . commit --m "DECRIPTION" push origin [branch] combiando (detectando automáticamente la rama)
-
-### Cosas que vienen
-
-- Clon de Boilerplates y subir a github para proyecto de:
-      - Backend --> node, java, python, c#
-      - Frontend --> vue, react, svelte, angular
-      - Mobile --> flutter, swift, kotlin
-
-
 ## Install
-
 
 ```shell
     # Install command
-    npm i -g gitx
+    npm i -g nwe
 ```
+
+## Descripción detallada 
+
+The objective of the project is to be able to facilitate the creation of projects and upload them to github in an easy way as well as simplifying the use of git and making routine tasks like doing commits and add changes much faster by grouping commands. Some current features are:
+
+- Clone and clone name change
+- Github clone, name change & create a new github repo automatically
+- Github token auth
+- branch + checkout combined
+- add . commit --m "DECRIPTION" push combined
+- add . commit --m "DECRIPTION" push origin [branch] combined (detecs the branch automatically)
+
+### Things I want to include next
+
+- Easily clone of several kind of Boilerplates:
+      - Backend --> node, java, python, c#
+      - Frontend --> vue, react, svelte, angular
+      - Mobile --> flutter, swift, kotlin
 
 ## Usage
 
@@ -66,18 +63,19 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 
 Para contribuir simplemente puedes:
 
-1. Clonar el repositorio
-2. Crear tu propia rama --> añade un nombre que tenga sentido con el update o feature que quieras implementar
-3. Hacer push y pull request a dev y pedir un code review para poder incluir los cambios
+1. Clone the repo
+2. Create a branch with the name of the feature you want to add
+3. Pull to your branch
+4. Create a pull request to dev so it can be checked and merged
 
-Tenéis los Code of condut en la misma repo
+
 ## Contact info 
 
-Puedes contactar conmigo en LinkedIn
+You can contact me on LinkedIn
 
-[Edgar Gago Carrillo]()
+[Edgar Gago Carrillo](https://www.linkedin.com/in/edgargagocarrillo/)
 
-o bien en mi correo:
+or at:
 
 > edgargc.upc@gmail.com
 
