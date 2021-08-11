@@ -1,5 +1,5 @@
 {
-  "name": "gitx",
+  "name": "nwe",
   "version": "1.0.0",
   "description": "Superchargex git commands",
   "main": "index.js",
@@ -18,7 +18,7 @@
   "author": "Edgar Gago Carrillo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gagocarrilloedgar/custom_cli"
+    "url": "https://github.com/gagocarrilloedgar/nwe"
   },
   "license": "MIT",
   "dependencies": {
@@ -34,7 +34,7 @@
     "shelljs": "^0.8.4"
   },
   "bin": {
-    "gitx": "src/index.js"
+    "nwe": "src/index.js"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
