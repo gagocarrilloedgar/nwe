@@ -32,14 +32,31 @@ Por rellenar una vez se lance el paquete
 
 ## Usage
 
-```shell
+```sh
       # clone and push automatically to your github
       gitx clone [url] 
 ```
 
-```shell
+```sh
       # Init a repo and push it to github (takes folder name)
       gitx init ./
+```
+
+```sh
+      # Adds all the current changes, commits with the set up description and push to the repo
+      gitx push [Description, no need for placing " "]
+```
+
+
+```sh
+      # Adds all the current changes, commits with the set up description and push to the current branch you are working on at the moment
+      gitx push -o [Description, no need for placing " "]
+```
+
+
+```sh
+      # Combines branch + checkout [branch_name]
+      gitx branch [branch_name]
 ```
 
 
