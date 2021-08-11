@@ -4,6 +4,10 @@ const app = require('commander')
 const shell = require('shelljs')
 const { logError } = require('../services/logger')
 
+/**
+ * Testing function to try out not working or commands
+ * @returns
+ */
 const testing = () =>
   app.command('test').action(async () => {
     const path = process.cwd() + '/' + 'test2'
