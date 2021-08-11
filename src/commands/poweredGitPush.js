@@ -19,5 +19,3 @@ const poweredGitPush = () =>
     })
 
 module.exports = { poweredGitPush }
-
-// dummy change
