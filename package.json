@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/gagocarrilloedgar/custom_cli"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.3.5",
     "chalk": "^4.1.0",
@@ -34,7 +34,7 @@
     "shelljs": "^0.8.4"
   },
   "bin": {
-    "gitx": "./index.js"
+    "gitx": "src/index.js"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

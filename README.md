@@ -27,7 +27,7 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 
 ```shell
     # Install command
-    npm i gitx
+    npm i -g gitx
 ```
 
 ## Usage
