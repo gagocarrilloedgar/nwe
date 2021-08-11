@@ -1,6 +1,9 @@
 ## Remote Github Repository Creator CLI
 
 CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git
+
+[![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx) ![GitHub followers](https://img.shields.io/github/followers/gagocarrilloedgar?style=social) ![GitHub forks](https://img.shields.io/github/forks/gagocarrilloedgar/gitx?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/gagocarrilloedgar/gitx?style=social)
+
 ## Descripción detallada 
 
 El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a githubde forma fácil. Algunas funcionalidades actuales son:
@@ -17,10 +20,6 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
       - Frontend
       - Mobile
 
-
-## Badges 
-
-[![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx) ![GitHub followers](https://img.shields.io/github/followers/gagocarrilloedgar?style=social) ![GitHub forks](https://img.shields.io/github/forks/gagocarrilloedgar/gitx?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/gagocarrilloedgar/gitx?style=social)
 
 ## Install
 
