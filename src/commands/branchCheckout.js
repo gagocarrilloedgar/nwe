@@ -1,6 +1,10 @@
 const app = require('commander')
 const { branchAndCheck } = require('../services/shell')
 
+/**
+ * Command to execture git branch [name] checkout [combined]
+ * @returns
+ */
 const branchCheckout = () =>
   app
     .command('branch')
