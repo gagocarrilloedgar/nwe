@@ -12,6 +12,9 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 - Clon del proyecto, cambio de nombre y subir automáticamente a github
 - Git init y subir a github
 - Github token auth
+- branch + checkout combinando
+- add . commit --m "DECRIPTION" push combiando
+- add . commit --m "DECRIPTION" push origin [branch] combiando (detectando automáticamente la rama)
 
 ### Cosas que vienen
 
@@ -33,29 +36,29 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 
 ```sh
       # clone and push automatically to your github
-      gitx clone [url] 
+      nwe clone [url] 
 ```
 
 ```sh
       # Init a repo and push it to github (takes folder name)
-      gitx init ./
+      nwe init ./
 ```
 
 ```sh
       # Adds all the current changes, commits with the set up description and push to the repo
-      gitx push [Description, no need for placing " "]
+      nwe push [Description, no need for placing " "]
 ```
 
 
 ```sh
       # Adds all the current changes, commits with the set up description and push to the current branch you are working on at the moment
-      gitx push -o [Description, no need for placing " "]
+      nwe push -o [Description, no need for placing " "]
 ```
 
 
 ```sh
       # Combines branch + checkout [branch_name]
-      gitx branch [branch_name]
+      nwe branch [branch_name]
 ```
 
 
@@ -65,7 +68,7 @@ Para contribuir simplemente puedes:
 
 1. Clonar el repositorio
 2. Crear tu propia rama --> añade un nombre que tenga sentido con el update o feature que quieras implementar
-3. Hacer push y pull request y pide un code review para poder incluir los cambios
+3. Hacer push y pull request a dev y pedir un code review para poder incluir los cambios
 
 Tenéis los Code of condut en la misma repo
 ## Contact info 
