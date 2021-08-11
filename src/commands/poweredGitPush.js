@@ -1,6 +1,5 @@
 const app = require('commander')
-const { push } = require('shelljs/commands')
-const { addCommit, pushOrigin } = require('../services/shell')
+const { push, addCommit, pushOrigin } = require('../services/shell')
 
 const poweredGitPush = () =>
   app
