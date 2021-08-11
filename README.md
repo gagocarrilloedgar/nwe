@@ -17,6 +17,7 @@ CLI (Command Line Interface) based on git but with super powers. The goal is to 
 
 The objective of the project is to be able to facilitate the creation of projects and upload them to github in an easy way as well as simplifying the use of git and making routine tasks like doing commits and add changes much faster by grouping commands. Some current features are:
 
+- inits a new local repos create a new github one
 - Clone and clone name change
 - Github clone, name change & create a new github repo automatically
 - Github token auth
@@ -39,8 +40,8 @@ The objective of the project is to be able to facilitate the creation of project
 ```
 
 ```sh
-      # Init a repo and push it to github (takes folder name)
-      nwe init ./
+      # init and push to github (new repo)
+      nwe init
 ```
 
 ```sh

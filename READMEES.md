@@ -15,6 +15,7 @@ CLI (Command Line Interface) basada en git pero con super poderes. El objetivo e
 
 El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a github de forma fácil además de simplificar el uso de git y hacer que las teareas de rutina como ahcer commits y add sean mucho más rápidas agrupando comandos. Algunas funcionalidades actuales son:
 
+- hace init en una carpeta en lcoal y crea una nuwe repo en github
 - Clon de un proyecto y cambio de nombre 
 - Clon del proyecto, cambio de nombre y subir automáticamente a github
 - Git init y subir a github
@@ -38,8 +39,8 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 ```
 
 ```sh
-      # To-update (no funcionanando por el momento)
-      nwe init ./
+      # init y pushed a github (nueva repo)
+      nwe init 
 ```
 
 ```sh
