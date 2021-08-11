@@ -1,4 +1,4 @@
-## Remote Github Repository Creator CLI | 
+## GIT Supercharged | nwe 
 
 CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git
 

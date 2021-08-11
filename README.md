@@ -1,4 +1,6 @@
-## Remote Github Repository Creator CLI | 
+## GIT Supercharged | nwe 
+
+[Spanish version](https://github.com/gagocarrilloedgar/nwe/blob/main/READMEES.md)
 
 CLI (Command Line Interface) based on git but with super powers. The goal is to group and simplify commands to make working with git & github easier and faster.
 
