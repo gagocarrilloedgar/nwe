@@ -1,7 +1,7 @@
 {
   "name": "nwe",
   "version": "1.0.2",
-  "description": "Superchargex git commands",
+  "description": "Supercharged git commands",
   "main": "index.js",
   "keywords": [
     "node",

@@ -1,26 +1,23 @@
 const app = require('commander')
 const { newGithubRepo, authenticate } = require('../services/github')
-const { inquire } = require('../services/inquirer')
 const { logInfo } = require('../services/logger')
-const { questions } = require('../services/questions')
+const { npmGitInit } = require('../services/shell')
 
-const pushExistingReop = () =>
+const initAndCreate = () =>
   app
     .command('init')
-    .description('Run CLI tool')
+    .description('inits local repository and push the result to a github repo')
     .action(async () => {
-      const answer = await inquire(questions)
+      logInfo('Authenticating...')
+      const octokit = await authenticate()
 
-      if (answer.proceed === 'Yes') {
-        logInfo('Authenticating...')
-        const octokit = await authenticate()
+      logInfo('Initializing new remote repo...')
 
-        logInfo('Initializing new remote repo...')
+      npmGitInit()
 
-        const url = await newGithubRepo(octokit)
+      const url = await newGithubRepo(octokit)
 
-        logInfo('Committing files to GitHub at: ' + url)
-      }
+      logInfo('Committing files to GitHub at: ' + url)
     })
 
-module.exports = { pushExistingReop }
+module.exports = { initAndCreate }

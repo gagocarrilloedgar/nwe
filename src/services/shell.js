@@ -70,4 +70,9 @@ const branchAndCheck = (name) => {
   shell.exec(`git checkout ${name}`)
 }
 
-module.exports = { pushFolderToRepo, cloneRepo, push, addCommit, pushOrigin, branchAndCheck }
+const npmGitInit = () => {
+  shell.exec('git init')
+  shell.exec('npm init --y')
+}
+
+module.exports = { npmGitInit, pushFolderToRepo, cloneRepo, push, addCommit, pushOrigin, branchAndCheck }
