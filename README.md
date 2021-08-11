@@ -20,9 +20,7 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 
 ## Badges 
 
-[![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx)
+[![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/gitx) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx)
 
 ## Install
 
