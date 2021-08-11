@@ -6,7 +6,7 @@ CLI (Command Line Interface) basada en git pero con super poderes. El objetivo e
 
 ## Descripción detallada 
 
-El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a githubde forma fácil. Algunas funcionalidades actuales son:
+El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a github de forma fácil además de simplificar el uso de git y hacer que las teareas de rutina como ahcer commits y add sean mucho más rápidas agrupando comandos. Algunas funcionalidades actuales son:
 
 - Clon de un proyecto y cambio de nombre 
 - Clon del proyecto, cambio de nombre y subir automáticamente a github
@@ -19,9 +19,9 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 ### Cosas que vienen
 
 - Clon de Boilerplates y subir a github para proyecto de:
-      - Backend
-      - Frontend
-      - Mobile
+      - Backend --> node, java, python, c#
+      - Frontend --> vue, react, svelte, angular
+      - Mobile --> flutter, swift, kotlin
 
 
 ## Install
