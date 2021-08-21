@@ -54,19 +54,61 @@ The objective of the project is to be able to facilitate the creation of project
 ```
 
 ### MKDocs & JSDocs functionality
+
+For this functionality you'll need to follow the documenation of: [Edgar's Custom Material-template](https://gagocarrilloedgar.github.io/mkdocs_template/)
+
+And before install: 
+
+```sh
+      npm i jsdoc-to-markdown 
+```
+
 ```sh
       # Allows to create documentation templates based on MKDocs and use JSDocs to include jsdocs comments into the MKDoc folder
       nwe docs [option]
 ```
 
-For this functionality you'll need to follow the documenation of: [Edgar's Custom Material-template](https://gagocarrilloedgar.github.io/mkdocs_template/)
+**Create a new project:**
 
+You have to options to create a new project: 
 
-And install: 
+```shell
+nwe docs -i # creates de basic template of MKDocs
+nwe docs -m # Creates a custom setup based on Material MKDocs
+```
+
+**Generate documentation**
+
+You can also automatically generate *.md* files from your *jsdoc* comments using the following command:
 
 ```sh
-      npm i jsdoc-to-markdown 
+nwe docs -g 
 ```
+
+In order for this command to work you need to place all your source code inside a src folder located in the root folder (*a new feature will allow to include files from custom folder or even from all the files inside root*)
+
+Also the command is prepared to work wiht the **nwe docs -m** command therefore if you are using your own config you should have the *nav* element of your MkDocs.yml like the following: 
+
+```yaml
+nav:
+  - Something:
+      - ...
+  # to have this src here it is important because is where nwe will add the links 
+  - src:
+      - Commands: src/commands.md
+      - Services: src/services.md
+```
+
+In addition you should have a **src** folder inside your **doc** folder like this: 
+
+> docs /
+>
+> 	- … your files
+>  - src/
+>    	- source code files will be included here
+
+
+
 
 ## Contribution 
 
