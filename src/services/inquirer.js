@@ -4,13 +4,13 @@ const { questions } = require('./questions')
 /**
  * Triggers the inquierer library
  * @param {Object} question set of questions passed to be answered
- * @returns
+ * @returns {Function}
  */
 const inquire = (question) => inquirer.prompt(question)
 
 /**
  * Triggers inquirer when yes/no  needs to be answered
- * @returns
+ * @returns {Object}
  */
 async function inquireRepositoryData() {
   const toQuestion = [questions.url, questions.changeName]

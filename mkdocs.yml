@@ -1,0 +1,99 @@
+site_name: Material MKDocs template
+site_url: https://gagocarrilloedgar.github.io/nwe/
+site_author: Edgar Gago Carrillo
+site_description: This is a custom setup based on mkdocs.org and MKDocs Material
+  that contains the basic project documentation config, including, README,  code
+  of conduct and license
+copyright: Copyright &copy; 2021 Edgar Gago Carrillo
+nav:
+  - Readme:
+      - Home: index.md
+      - About: about.md
+      - Code of conduct: conduct.md
+      - License: license.md
+      - Cotribute: contribute.md
+  - src:
+      - Commands: src/commands.md
+      - Services: src/services.md
+repo_name: gagocarrilloedgar/mkdocs_template
+repo_url: https://github.com/gagocarrilloedgar/mkdocs_template
+edit_uri: ""
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: img/favicon.ico
+  homepage: https://github.com/gagocarrilloedgar/mkdocs_template
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.expand
+  palette:
+    - scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to ligth mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.details
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+plugins:
+  - search
+  - git-revision-date
+extra:
+  analytics:
+    provider: google
+    property: GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/gagocarrilloedgar
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/edgargc9
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/_youedgar
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/edgargagocarrillo/
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/edgar.gago
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:edgargc.upc@gmail.com

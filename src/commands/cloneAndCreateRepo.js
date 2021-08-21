@@ -1,4 +1,4 @@
-const { logInfo, gitxInit, logAlert, logSuccess } = require('../services/logger')
+const { logInfo, logAlert, logSuccess } = require('../services/logger')
 const { cloneRepo, pushFolderToRepo } = require('../services/shell')
 const app = require('commander')
 const { inquireRepositoryData } = require('../services/inquirer')
@@ -9,7 +9,6 @@ const cloneAndCreateRepo = () =>
     .command('create')
     .description('Clone and Create a new Github project from another one')
     .action(async () => {
-      gitxInit('gitx cli')
       inquireRepositoryData().then(async ({ url, repoName }) => {
         cloneRepo(url, repoName)
 

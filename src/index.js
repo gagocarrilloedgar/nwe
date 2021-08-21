@@ -5,6 +5,7 @@ const clear = require('clear')
 const { checkArgumentsForHelp, parseArguments, cloneAndCreateRepo, cloneWithInquire, poweredGitPush } = require('./commands')
 const { testing } = require('./commands/baseCommands')
 const { branchCheckout } = require('./commands/branchCheckout')
+const { createMdDocs } = require('./commands/createMdDocs')
 const { initAndCreate } = require('./commands/pushExistingRepo')
 
 clear()
@@ -26,6 +27,9 @@ branchCheckout()
 
 // init
 initAndCreate()
+
+// Create documenation
+createMdDocs()
 
 // Parse the arguments and create the help command
 parseArguments()

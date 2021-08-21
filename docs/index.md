@@ -67,38 +67,3 @@ And install:
 ```sh
       npm i jsdoc-to-markdown 
 ```
-
-## Contribution 
-
-Para contribuir simplemente puedes:
-
-1. Clone the repo
-2. Create a branch with the name of the feature you want to add
-3. Pull to your branch
-4. Create a pull request to dev so it can be checked and merged
-
-
-## Contact info 
-
-You can contact me on LinkedIn
-
-[Edgar Gago Carrillo](https://www.linkedin.com/in/edgargagocarrillo/)
-
-or at:
-
-> edgargc.upc@gmail.com
-
-## Licence 
-
-[MIT](https://opensource.org/licenses/MIT)
-
-
-# Roadmap
-
-
-### Things I want to include next
-
-- Easily clone of several kind of Boilerplates:
-      - Backend --> node, java, python, c#
-      - Frontend --> vue, react, svelte, angular
-      - Mobile --> flutter, swift, kotlin

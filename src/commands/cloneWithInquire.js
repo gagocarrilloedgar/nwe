@@ -1,6 +1,6 @@
 const app = require('commander')
 
-const { cloneRepo, testRunner } = require('../services/shell')
+const { cloneRepo } = require('../services/shell')
 const { inquireRepositoryData } = require('../services/inquirer')
 
 const cloneWithInquire = () =>
@@ -10,8 +10,6 @@ const cloneWithInquire = () =>
     .action(async () => {
       inquireRepositoryData().then(({ url, repoName }) => {
         cloneRepo(url, repoName)
-        const dirName = repoName || url.split('/').pop()
-        testRunner(dirName)
       })
     })
 

@@ -3,7 +3,7 @@ const { branchAndCheck } = require('../services/shell')
 
 /**
  * Command to execture git branch [name] checkout [combined]
- * @returns
+ * @returns {Function}
  */
 const branchCheckout = () =>
   app

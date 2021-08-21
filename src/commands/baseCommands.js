@@ -6,7 +6,7 @@ const { logError } = require('../services/logger')
 
 /**
  * Testing function to try out not working or commands
- * @returns
+ * @returns {Boolean}
  */
 const testing = () =>
   app.command('test').action(async () => {
