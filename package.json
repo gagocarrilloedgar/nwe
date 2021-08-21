@@ -1,8 +1,9 @@
 {
   "name": "nwe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Supercharged git commands",
   "main": "index.js",
+  "homepage": "https://gagocarrilloedgar.github.io/nwe/",
   "keywords": [
     "node",
     "github",
