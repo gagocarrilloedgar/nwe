@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This is a custom setup based on mkdocs.org and MKDocs Material that contains the basic project documentation config, including, README,  code of conduct and license">
+        <meta name="description" content="CLI (Command Line Interface) based on git but with super powers. The goal is to group and simplify commands to make working with git & github easier and faster.">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Home - Material MKDocs template</title>
+        <title>Home - GIT Supercharged | nwe</title>
       
     
     
@@ -90,7 +90,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Material MKDocs template" class="md-header__button md-logo" aria-label="Material MKDocs template" data-md-component="logo">
+    <a href="." title="GIT Supercharged | nwe" class="md-header__button md-logo" aria-label="GIT Supercharged | nwe" data-md-component="logo">
       
   <img src="assets/logo.png" alt="logo">
 
@@ -102,7 +102,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Material MKDocs template
+            GIT Supercharged | nwe
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -208,12 +208,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Material MKDocs template" class="md-nav__button md-logo" aria-label="Material MKDocs template" data-md-component="logo">
+    <a href="." title="GIT Supercharged | nwe" class="md-nav__button md-logo" aria-label="GIT Supercharged | nwe" data-md-component="logo">
       
   <img src="assets/logo.png" alt="logo">
 
     </a>
-    Material MKDocs template
+    GIT Supercharged | nwe
   </label>
   
     <div class="md-nav__source">
@@ -562,13 +562,43 @@
       nwe branch [branch_name]
 </code></pre>
 <h3 id="mkdocs-jsdocs-functionality">MKDocs &amp; JSDocs functionality<a class="headerlink" href="#mkdocs-jsdocs-functionality" title="Permanent link">&para;</a></h3>
+<p>For this functionality you'll need to follow the documenation of: <a href="https://gagocarrilloedgar.github.io/mkdocs_template/">Edgar's Custom Material-template</a></p>
+<p>And before install: </p>
+<pre><code class="language-sh">      npm i jsdoc-to-markdown 
+</code></pre>
 <pre><code class="language-sh">      # Allows to create documentation templates based on MKDocs and use JSDocs to include jsdocs comments into the MKDoc folder
       nwe docs [option]
 </code></pre>
-<p>For this functionality you'll need to follow the documenation of: <a href="https://gagocarrilloedgar.github.io/mkdocs_template/">Edgar's Custom Material-template</a></p>
-<p>And install: </p>
-<pre><code class="language-sh">      npm i jsdoc-to-markdown 
+<p><strong>Create a new project:</strong></p>
+<p>You have to options to create a new project: </p>
+<pre><code class="language-shell">nwe docs -i # creates de basic template of MKDocs
+nwe docs -m # Creates a custom setup based on Material MKDocs
 </code></pre>
+<p><strong>Generate documentation</strong></p>
+<p>You can also automatically generate <em>.md</em> files from your <em>jsdoc</em> comments using the following command:</p>
+<pre><code class="language-sh">nwe docs -g 
+</code></pre>
+<p>In order for this command to work you need to place all your source code inside a src folder located in the root folder (<em>a new feature will allow to include files from custom folder or even from all the files inside root</em>)</p>
+<p>Also the command is prepared to work wiht the <strong>nwe docs -m</strong> command therefore if you are using your own config you should have the <em>nav</em> element of your MkDocs.yml like the following: </p>
+<pre><code class="language-yaml">nav:
+  - Something:
+      - ...
+  # to have this src here it is important because is where nwe will add the links 
+  - src:
+      - Commands: src/commands.md
+      - Services: src/services.md
+</code></pre>
+<p>In addition you should have a <strong>src</strong> folder inside your <strong>doc</strong> folder like this: </p>
+<blockquote>
+<p>docs /</p>
+<ul>
+<li>… your files</li>
+<li>src/<ul>
+<li>source code files will be included here</li>
+</ul>
+</li>
+</ul>
+</blockquote>
                 
                   
                     
