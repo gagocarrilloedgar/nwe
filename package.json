@@ -1,6 +1,6 @@
 {
   "name": "nwe",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Supercharged git commands",
   "main": "index.js",
   "keywords": [
