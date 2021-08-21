@@ -1,8 +1,9 @@
 site_name: GIT Supercharged | nwe 
 site_url: https://gagocarrilloedgar.github.io/nwe/
 site_author: Edgar Gago Carrillo
-site_description: CLI (Command Line Interface) based on git but with super powers. The goal is to group and simplify 
-commands to make working with git & github easier and faster.
+site_description: CLI (Command Line Interface) based on git but 
+with super powers. The goal is to group and simplify commands to
+make working with git & github easier and faster.
 copyright: Copyright &copy; 2021 Edgar Gago Carrillo
 nav:
   - Readme:
