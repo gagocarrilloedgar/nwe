@@ -1,6 +1,6 @@
-## GIT Supercharged | nwe 
+## GIT Supercharged | nwe
 
-CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git
+CLI (Command Line Interface) basada en git pero con super poderes. El objetivo es agrupar y simplificar comandos para facilitar el trabajo con git.
 
 [![CodeFactor](https://www.codefactor.io/repository/github/gagocarrilloedgar/nwe/badge)](https://www.codefactor.io/repository/github/gagocarrilloedgar/nwe) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gagocarrilloedgar_gitx&metric=alert_status)](https://sonarcloud.io/dashboard?id=gagocarrilloedgar_gitx) ![GitHub followers](https://img.shields.io/github/followers/gagocarrilloedgar?style=social) ![GitHub forks](https://img.shields.io/github/forks/gagocarrilloedgar/gitx?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/gagocarrilloedgar/gitx?style=social)
 
@@ -11,12 +11,12 @@ CLI (Command Line Interface) basada en git pero con super poderes. El objetivo e
     npm i -g nwe
 ```
 
-## Descripción detallada 
+## Descripción detallada
 
 El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos a github de forma fácil además de simplificar el uso de git y hacer que las teareas de rutina como ahcer commits y add sean mucho más rápidas agrupando comandos. Algunas funcionalidades actuales son:
 
 - hace init en una carpeta en lcoal y crea una nuwe repo en github
-- Clon de un proyecto y cambio de nombre 
+- Clon de un proyecto y cambio de nombre
 - Clon del proyecto, cambio de nombre y subir automáticamente a github
 - Git init y subir a github
 - Github token auth
@@ -35,12 +35,12 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 
 ```sh
       # clone and push automaticamente a un repositorio nuevo de github desde otro url
-      nwe clone [url] 
+      nwe clone [url]
 ```
 
 ```sh
       # init y pushed a github (nueva repo)
-      nwe init 
+      nwe init
 ```
 
 ```sh
@@ -61,7 +61,7 @@ El obejtivo del proyecto es poder facilitar la creación de proyectos y subirlos
 ```
 
 
-## Contribución 
+## Contribución
 
 Para contribuir simplemente puedes:
 
@@ -70,7 +70,7 @@ Para contribuir simplemente puedes:
 3. Hacer push y pull request a dev y pedir un code review para poder incluir los cambios
 
 Tenéis los Code of condut en la misma repo
-## Contact info 
+## Contact info
 
 Puedes contactar conmigo en LinkedIn
 
@@ -80,6 +80,6 @@ o bien en mi correo:
 
 > edgargc.upc@gmail.com
 
-## Licence 
+## Licence
 
 [MIT](https://opensource.org/licenses/MIT)
